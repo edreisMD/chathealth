@@ -1,0 +1,104 @@
+{
+  "expo": {
+    "name": "ChatHealth",
+    "slug": "chathealth",
+    "scheme": "chathealth",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "usesAppleSignIn": true,
+      "supportsTablet": true,
+      "bundleIdentifier": "org.example.chathealth",
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.access": [
+          "health-records"
+        ],
+        "aps-environment": "development"
+      },
+      "backgroundModes": [
+        "background-app-refresh",
+        "background-fetch"
+      ],
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record voice messages for transcription.",
+        "NSCameraUsageDescription": "This app uses the camera to capture photos for sharing in conversations.",
+        "NSPhotoLibraryUsageDescription": "This app accesses your photo library to let you share photos in conversations.",
+        "NSHealthShareUsageDescription": "This app uses HealthKit to read your health and fitness data to provide personalized insights and track your wellness goals.",
+        "NSHealthUpdateUsageDescription": "This app uses HealthKit to update your health data for comprehensive wellness tracking.",
+        "NSUserNotificationsUsageDescription": "This app uses notifications to send you health reminders and updates about your check-ins."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "org.example.chathealth",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#000000",
+      "iosDisplayInForeground": true,
+      "androidMode": "default",
+      "androidCollapsedTitle": "#{unread_notifications} new interactions"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f3f4f6",
+          "image": "./assets/splash-icon.png",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#f3f4f6"
+          },
+          "imageWidth": 300
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone for voice recording."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them in conversations.",
+          "cameraPermission": "The app accesses your camera to let you take photos and share them in conversations."
+        }
+      ],
+      "expo-apple-authentication",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
