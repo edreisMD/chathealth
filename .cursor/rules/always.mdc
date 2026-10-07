@@ -1,9 +1,0 @@
----
-description:
-globs:
-alwaysApply: true
----
-Use bun and bunx instead of npm or npx.
-Use nativewind or tailwind for styling. Never use raw html style in the code, this is bad practice.
-Don't fix quotes in previous code (from ' to "), leave it as is.
-Never commit or push to main branch before asking me and I having test said that it was working, for the app directory, I usually prefer to push it manually myself.
